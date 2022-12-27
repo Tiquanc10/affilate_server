@@ -2,8 +2,6 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow 
 from flask_cors import CORS
-from datetime import datetime, timedelta
-from flask_bcrypt import Bcrypt
 import os
 
 # Init app
@@ -17,7 +15,6 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 # Middleware
-bcrypt = Bcrypt(app)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 class User(db.Model):
